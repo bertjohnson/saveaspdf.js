@@ -1,0 +1,29 @@
+{
+  "title": "saveaspdf",
+  "name": "saveaspdf",
+  "description": "Save the current HTML5 webpage as a PDF.",
+  "keywords": [ "pdf", "export", "output", "print", "saveaspdf", "html2pdf"],
+  "main": "dist/saveaspdf.js",
+  "version": "1.0.0",
+  "author": {
+    "name": "Bert Johnson",
+    "email": "bert@bertjohnson.com",
+    "url": "https://bertjohnson.com"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bertjohnson/saveaspdf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bertjohnson/saveaspdf/issues"
+  },
+  "dependencies": {
+    "html2canvas": ">=0.4.1",
+    "jspdf": ">=1.3.2"
+  },
+  "homepage": "https://github.com/bertjohnson/saveaspdf",
+  "license": "MIT"
+}
