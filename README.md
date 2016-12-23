@@ -68,11 +68,11 @@ Browser Compatibility
 
 saveaspdf() should work on the following browsers:
 
-Firefox 3.5+
-Google Chrome
-Opera 12+
-IE9+
-Safari 6+
+* Firefox 3.5+
+* Google Chrome
+* Opera 12+
+* IE9+
+* Safari 6+
 
 Limitations
 ===========
