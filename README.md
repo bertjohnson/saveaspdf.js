@@ -18,27 +18,38 @@ The function relies on [html2canvas](https://github.com/niklasvh/html2canvas) by
 
 These can be referenced from [cdnjs.com](https://cdnjs.com/):
 
-`<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js'></script>`
-`<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js'></script>`
+```html
+<!-- Dependencies hosted on CDNJS -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js'></script>`
+<!-- saveaspdf -->
+<script src='saveaspdf.js'></script>
+```
 
 Usage
 =====
 
 To output the current page as a PDF named "webpage.pdf", simply call:
 
-`saveaspdf('webpage.pdf')`
+```javascript
+saveaspdf('webpage.pdf')
+```
 
 While the above example works for most use cases, some applications hijack the scrolling behavior (e.g., SharePoint). In those cases, only the current viewport is saved to a PDF. Since that isn't ideal, saveaspdf() can accept a parameter object with properties named "expandVertical" and "expandHorizontal". Setting either value to true will temporarily override scrolling behavior to ensure all content is output, then revert to the original scrolling behavior.
 
 To output the current page (which has overridden vertical scrolling behavior) as a PDF named "webpage-scrolled.pdf"", call:
 
-`saveaspdf('webpage-scrolled.pdf', {expandVertical:true})`
+```javascript
+saveaspdf('webpage-scrolled.pdf', {expandVertical:true})
+```
 
 The function will attempt to set a default PDF background color based on the document's body background color. To override that, pass in an object with parameter of "background".
 
 To output the current page as PDF named "webpage-red.pdf" with a red background, call:
 
-`saveaspdf('webpage-red.pdf', {background:'#ff0000'})`
+```javascript
+saveaspdf('webpage-red.pdf', {background:'#ff0000'})
+```
 
 Available Options
 =================
@@ -69,7 +80,7 @@ Limitations
 saveaspdf() works best on self-contained websites. The following limitations exist and are unlikely to be fixed in the short-term:
 
 1. Not all pages can be exported. If a page already has canvas elements or if a "Content-Security-Policy" header has been set, the function will error.
-2. When rendering the canvas, external images (those on a different domain) may be blocked due to (cross-origin resource sharing)[http://enable-cors.org/] policies. Because of that, complex sites that use CDNs are likely to render without images.
+2. When rendering the canvas, external images (those on a different domain) may be blocked due to [cross-origin resource sharing](http://enable-cors.org/) policies. Because of that, complex sites that use CDNs are likely to render without images.
 3. Not all CSS properties are supported. External fonts are inconsistent.
 4. IFrames, Flash, and Java applets are not supported.
 5. The generated PDF will contain a single image on a single page. The lack of pagination makes printing and scrolling unwieldy in some PDF readers.
