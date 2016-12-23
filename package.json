@@ -4,7 +4,7 @@
   "description": "Save the current HTML5 webpage as a PDF.",
   "keywords": [ "pdf", "export", "output", "print", "saveaspdf", "html2pdf"],
   "main": "dist/saveaspdf.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Bert Johnson",
     "email": "bert@bertjohnson.com",

@@ -1,7 +1,7 @@
 ﻿/*
  * saveaspdf 1.0.0 (https://github.com/bertjohnson/saveaspdf).
  * Licensed according to the MIT License (http://mit-license.org/).
- *  Created by Bert Johnson (https://bertjohnson.com/) of Allcloud Inc. (https://allcloud.com/).
+ * Created by Bert Johnson (https://bertjohnson.com/) of Allcloud Inc. (https://allcloud.com/).
  *
  * Dependencies: html2canvas >=0.4.1 (https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js).
  *               jsPDF >=1.3.2 (https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js).
@@ -59,9 +59,9 @@ function saveaspdf(filename, params) {
 
             // Create a PDF based on the canvas.
             var context = canvas.getContext('2d');
-            var imgData = canvas.toDataURL("image/png", 1.0);
+            var imgData = canvas.toDataURL("image/jpeg", 1.0);
             var pdf = new jsPDF(orientation, 'pt', [canvas.width, canvas.height]);
-            pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+            pdf.addImage(imgData, 'JPEG', 0, 0, canvas.width, canvas.height);
             pdf.save(filename);
         },
         background: params.background,      // Establish a default background color.
